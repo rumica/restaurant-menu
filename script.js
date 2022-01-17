@@ -63,7 +63,6 @@ const menuItem = [
         desc: 'Kung Pao Chicken—which is made up of diced chicken, chilis, leeks, and peanuts—is a polarizing dish. It is hugely popular in the U.S. and U.K., but it is scorned as inauthentic foreigner fare in the Sichuan Province of China.',
         category: 'dinner'
        },
-
 ]
 
 //Show all data on UI
@@ -76,7 +75,6 @@ const menuItem = [
     </div>
     </div>`;
 })
-
 
 //Filtering with buttons
 const filterBreak = menuItem.filter(item =>  item.category === 'breakfast')
@@ -107,6 +105,7 @@ lunchBtn.addEventListener('click', function(){
         </div>`;
     })
 })
+
 dinnerBtn.addEventListener('click', function(){
     filterDinner.map(item =>{
         foodItemDiv.innerHTML += `<div class="box">
@@ -142,7 +141,6 @@ let field = document.querySelector('.field')
 for(var i = 0; i < box.length; i++){
     box[i].addEventListener('click' , showBox) 
 }
-
 
 function showBox (){
     field.innerHTML = `
