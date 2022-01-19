@@ -66,66 +66,63 @@ const menuItem = [
 ]
 
 //Show all data on UI
- menuItem.map(item =>{
-    foodItemDiv.innerHTML += `<div class="box">
-    <img src=${item.img}>
-    <div class="description">
-        <h2>${item.title}</h2> 
-        <p>${item.desc}</p>
-    </div>
-    </div>`;
+ const showUI = menuItem.map(item => item)
+ 
+//Filtering with buttons
+/* const filterBreak = menuItem.filter(item =>  {
+    if(item.category === 'breakfast') {
+        return foodItemDiv.innerHTML += `<div class="box">
+        <img src=${item.img}>
+        <div class="description">
+            <h2>${item.title}</h2> 
+            <p>${item.desc}</p>
+        </div>
+        </div>`;
+    }
 })
 
-//Filtering with buttons
-const filterBreak = menuItem.filter(item =>  item.category === 'breakfast')
-const filterLunch = menuItem.filter(el => el.category === 'lunch')
-const filterDinner = menuItem.filter(el => el.category === 'dinner')
+const filterLunch = menuItem.filter(item =>  {
+    if(item.category === 'lunch') 
+        return foodItemDiv.innerHTML += `<div class="box">
+        <img src=${item.img}>
+        <div class="description">
+            <h2>${item.title}</h2> 
+            <p>${item.desc}</p>
+        </div>
+        </div>`;
+
+})
+
+breakBtn.addEventListener('click', filterBreak)
+lunchBtn.addEventListener('click', filterLunch) */
+
 const filterDessert = menuItem.filter(el => el.category === 'dessert')
 
-breakBtn.addEventListener('click', function(){
-    filterBreak.map(item =>{
-        foodItemDiv.innerHTML += `<div class="box">
-        <img src=${item.img}>
-        <div class="description">
-            <h2>${item.title}</h2> 
-            <p>${item.desc}</p>
-        </div>
-        </div>`;
+dinnerBtn.addEventListener('click', function (){
+    showUI.filter(item => {
+        if(item.category === 'dinner'){
+            foodItemDiv.innerHTML += `<div class="box">
+            <img src=${item.img}>
+            <div class="description">
+                <h2>${item.title}</h2> 
+                <p>${item.desc}</p>
+            </div>
+            </div>`;
+        }
     })
 })
 
-lunchBtn.addEventListener('click', function(){
-    filterLunch.map(item =>{
-        foodItemDiv.innerHTML += `<div class="box">
-        <img src=${item.img}>
-        <div class="description">
-            <h2>${item.title}</h2> 
-            <p>${item.desc}</p>
-        </div>
-        </div>`;
-    })
-})
-
-dinnerBtn.addEventListener('click', function(){
-    filterDinner.map(item =>{
-        foodItemDiv.innerHTML += `<div class="box">
-        <img src=${item.img}>
-        <div class="description">
-            <h2>${item.title}</h2> 
-            <p>${item.desc}</p>
-        </div>
-        </div>`;
-    })
-})
 dessertBtn.addEventListener('click', function(){
-    filterDessert.map(item =>{
-        foodItemDiv.innerHTML += `<div class="box">
-        <img src=${item.img}>
-        <div class="description">
-            <h2>${item.title}</h2> 
-            <p>${item.desc}</p>
-        </div>
-        </div>`;
+    showUI.filter(item => {
+        if(item.category === 'dessert'){
+            foodItemDiv.innerHTML += `<div class="box">
+            <img src=${item.img}>
+            <div class="description">
+                <h2>${item.title}</h2> 
+                <p>${item.desc}</p>
+            </div>
+            </div>`;
+        }
     })
 })
 
